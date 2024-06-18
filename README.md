@@ -42,6 +42,8 @@ This cheat sheet provides a comprehensive list of Ubuntu commands, categorized b
 | `rmdir`        | Removes empty directories                         | `rmdir /directory`                  |
 | `touch`        | Creates an empty file or updates the timestamp    | `touch /file`                       |
 | `ln`           | Creates hard or symbolic links                    | `ln /source /link`, `ln -s /source /link` |
+| `cat`          | Concatenates and displays file content            | `cat /file`                         |
+| `nano`         | Opens the nano text editor                        | `nano /file`                        |
 
 ## Disk Management
 
