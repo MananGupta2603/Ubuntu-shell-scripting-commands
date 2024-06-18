@@ -1,4 +1,3 @@
-
 # Ubuntu Commands Cheat Sheet
 
 This cheat sheet provides a comprehensive list of Ubuntu commands, categorized by their functions. It includes commands for system information, file management, disk management, user management, network management, process management, package management, and file compression.
@@ -29,6 +28,15 @@ This cheat sheet provides a comprehensive list of Ubuntu commands, categorized b
 | `lshw`         | Lists hardware configuration                 | `lshw`            |
 | `lsblk`        | Lists information about block devices        | `lsblk`           |
 | `inxi`         | Displays comprehensive system information    | `inxi`            |
+| `hostnamectl`  | Shows or sets the system's hostname          | `hostnamectl`     |
+| `uname`        | Prints system information                    | `uname -a`        |
+| `arch`         | Displays machine architecture information    | `arch`            |
+| `vmstat`       | Reports virtual memory statistics            | `vmstat`          |
+| `iostat`       | Reports CPU and I/O statistics               | `iostat`          |
+| `mpstat`       | Reports CPU usage per processor              | `mpstat`          |
+| `pidstat`      | Reports statistics for Linux tasks           | `pidstat`         |
+| `uptime`       | Shows how long the system has been running   | `uptime`          |
+| `dmidecode`    | DMI table decoder                            | `sudo dmidecode`  |
 
 ## File Management
 
@@ -44,6 +52,21 @@ This cheat sheet provides a comprehensive list of Ubuntu commands, categorized b
 | `ln`           | Creates hard or symbolic links                    | `ln /source /link`, `ln -s /source /link` |
 | `cat`          | Concatenates and displays file content            | `cat /file`                         |
 | `nano`         | Opens the nano text editor                        | `nano /file`                        |
+| `more`         | Views file content one screen at a time           | `more /file`                        |
+| `less`         | Views file content with backward movement         | `less /file`                        |
+| `head`         | Outputs the first part of files                   | `head -n 10 /file`                  |
+| `tail`         | Outputs the last part of files                    | `tail -n 10 /file`                  |
+| `chmod`        | Changes file permissions                          | `chmod 755 /file`                   |
+| `chown`        | Changes file owner and group                      | `chown user:group /file`            |
+| `stat`         | Displays file or file system status               | `stat /file`                        |
+| `find`         | Searches for files in a directory hierarchy       | `find /path -name filename`         |
+| `locate`       | Finds files by name                               | `locate filename`                   |
+| `grep`         | Searches text using patterns                      | `grep 'pattern' /file`              |
+| `awk`          | Pattern scanning and processing language          | `awk '/pattern/ {print $0}' /file`  |
+| `sed`          | Stream editor for filtering and transforming text | `sed 's/old/new/' /file`            |
+| `diff`         | Compares files line by line                       | `diff file1 file2`                  |
+| `cmp`          | Compares two files                                | `cmp file1 file2`                   |
+| `wc`           | Prints newline, word, and byte counts for files   | `wc /file`                          |
 
 ## Disk Management
 
@@ -57,6 +80,12 @@ This cheat sheet provides a comprehensive list of Ubuntu commands, categorized b
 | `blkid`        | Lists UUIDs of block devices                      | `blkid`                             |
 | `df`           | Reports file system disk space usage              | `df -h`                             |
 | `du`           | Estimates file and directory space usage          | `du -sh /path`                      |
+| `parted`       | Manipulates disk partitions                       | `sudo parted /dev/sdX`              |
+| `lsusb`        | Lists USB devices                                  | `lsusb`                             |
+| `lspci`        | Lists PCI devices                                  | `lspci`                             |
+| `smartctl`     | Monitors and controls SMART disks                 | `sudo smartctl -a /dev/sdX`         |
+| `e2fsck`       | Checks a Linux ext2/ext3/ext4 file system         | `sudo e2fsck /dev/sdX`              |
+| `resize2fs`    | Resizes ext2/ext3/ext4 file systems               | `sudo resize2fs /dev/sdX`           |
 
 ## User Management
 
@@ -69,6 +98,11 @@ This cheat sheet provides a comprehensive list of Ubuntu commands, categorized b
 | `deluser`      | Removes a user from the system                    | `sudo deluser username`             |
 | `groupadd`     | Adds a new group                                  | `sudo groupadd groupname`           |
 | `groupdel`     | Deletes a group                                   | `sudo groupdel groupname`           |
+| `id`           | Displays user identity                            | `id username`                       |
+| `who`          | Shows who is logged on                            | `who`                               |
+| `w`            | Displays who is logged in and what they are doing | `w`                                 |
+| `last`         | Shows last logins of users                        | `last`                              |
+| `chage`        | Changes user password expiry information          | `sudo chage -l username`            |
 
 ## Network Management
 
@@ -84,6 +118,14 @@ This cheat sheet provides a comprehensive list of Ubuntu commands, categorized b
 | `curl`         | Transfers data from or to a server                | `curl http://example.com`           |
 | `scp`          | Secure copy (remote file copy program)            | `scp file user@remote:/path`        |
 | `ssh`          | OpenSSH remote login client                       | `ssh user@remote`                   |
+| `dig`          | DNS lookup utility                                | `dig example.com`                   |
+| `hostname`     | Shows or sets the system's hostname               | `hostname`, `hostname newhostname`  |
+| `nmcli`        | Command-line client for NetworkManager            | `nmcli dev status`                  |
+| `nmtui`        | Text user interface for NetworkManager            | `nmtui`                             |
+| `ethtool`      | Displays or changes Ethernet device settings      | `sudo ethtool eth0`                 |
+| `iptables`     | Administers IP packet filter rules                | `sudo iptables -L`                  |
+| `ss`           | Utility to investigate sockets                    | `ss -tuln`                          |
+| `iwconfig`     | Configures wireless network interfaces            | `iwconfig`                          |
 
 ## Process Management
 
@@ -97,6 +139,15 @@ This cheat sheet provides a comprehensive list of Ubuntu commands, categorized b
 | `htop`         | Interactive process viewer                        | `htop`                              |
 | `systemctl`    | Manages systemd services                          | `sudo systemctl restart service`    |
 | `service`      | Runs a System V init script                       | `sudo service apache2 restart`      |
+| `killall`      | Kills all processes by name                       | `killall processname`               |
+| `bg`           | Resumes a suspended job in the background         | `bg %1`                             |
+| `fg`           | Brings a background job to the foreground         | `fg %1`                             |
+| `jobs`         | Lists current jobs                                | `jobs`                              |
+| `nice`         | Starts a process with a given priority            | `nice -n 10 command`                |
+| `renice`       | Changes the priority of an existing process       | `renice +10 PID`                    |
+| `crontab`      | Schedules periodic jobs and tasks                 | `crontab -e`                        |
+| `at`           | Schedules a command to run once at a later time   | `at now + 5 minutes`                |
+| `batch`        | Executes commands when system load levels permit  | `batch`                             |
 
 ## Package Management
 
@@ -108,6 +159,12 @@ This cheat sheet provides a comprehensive list of Ubuntu commands, categorized b
 | `snap`         | Package management system for snaps               | `sudo snap install package`         |
 | `apt-cache`    | Queries APT's package cache                       | `apt-cache search package`          |
 | `aptitude`     | Terminal-based UI for APT                         | `sudo apt install aptitude`         |
+| `add-apt-repository` | Adds a new repository to APT sources       | `sudo add-apt-repository ppa:repo`  |
+| `apt-key`      | Manages APT keys                                  | `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys key` |
+| `snap find`    | Searches for snaps                                | `snap find package`                 |
+| `snap list`    | Lists installed snaps                             | `snap list`                         |
+| `snap remove`  | Removes a snap package                            | `sudo snap remove package`          |
+| `dpkg-reconfigure` | Reconfigures an already installed package    | `sudo dpkg-reconfigure package`     |
 
 ## File Compression
 
@@ -118,6 +175,13 @@ This cheat sheet provides a comprehensive list of Ubuntu commands, categorized b
 | `gunzip`       | Decompresses files                                | `gunzip file.gz`                    |
 | `zip`          | Package and compress (archive) files              | `zip archive.zip file1 file2`       |
 | `unzip`        | Extracts files from a ZIP archive                 | `unzip archive.zip`                 |
+| `bzip2`        | Compresses files using Burrows-Wheeler block sorting | `bzip2 file`                      |
+| `bunzip2`      | Decompresses bzip2 files                          | `bunzip2 file.bz2`                  |
+| `xz`           | Compresses files using the LZMA algorithm         | `xz file`                           |
+| `unxz`         | Decompresses xz files                             | `unxz file.xz`                      |
+| `7z`           | High compression file archiver                    | `7z a archive.7z file1 file2`       |
+| `rar`          | Archive manager for RAR files                     | `rar a archive.rar file1 file2`     |
+| `unrar`        | Extracts RAR archive files                        | `unrar x archive.rar`               |
 
 ## Conclusion
 
